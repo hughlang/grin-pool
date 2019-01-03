@@ -192,3 +192,21 @@ export const fetchMinerPaymentScript = () => async (dispatch: Dispatch, getState
     console.log('fetchMinerPaymentScript error: ', e)
   }
 }
+
+export const submitFeedbackForm = (input: string) => async (dispatch: Dispatch, getState: GetState) => {
+  try {
+    const feedbackUrl = `https://formspree.io/kylan.hurt@gmail.com`
+    const data = {
+      email: 'kylan@datagoniaweb.com',
+      _subject: 'Grin Pool Feedback Form',
+      message: input
+    }
+    const feedbackResponse = await fetch(feedbackUrl, {
+      method: 'POST',
+      body: JSON.stringify(data)
+    })
+    console.log('feedbackResponse is: ', feedbackResponse)
+  } catch (e) {
+    console.log('submitFeedbackForm error: ', e)
+  }
+}

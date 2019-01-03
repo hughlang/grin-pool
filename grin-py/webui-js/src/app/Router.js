@@ -9,6 +9,7 @@ import { HomepageConnector } from '../redux/connectors/HomepageConnector.js'
 import { AboutComponent } from '../containers/About/About.js'
 import { GrinPoolDetailsConnector } from '../redux/connectors/GrinPoolDetailsConnector.js'
 import { LoginConnector } from '../redux/connectors/LoginConnector.js'
+import { SubmitFeedbackConnector } from '../redux/connectors/SubmitFeedbackConnector.js'
 
 class Router extends Component {
   render () {
@@ -38,6 +39,9 @@ class WrappedRoutes extends Component {
           <Route path="/login" component={LoginConnector} />
           <PrivateRoute path="/miner" exact component={MinerDetailsConnector} account={account} />
           <PrivateRoute path="/miner/payment" component={MinerPaymentConnector} account={account} />
+          {account && (
+            <PrivateRoute path="/miner/feedback" component={SubmitFeedbackConnector} account={account} />
+          )}
         </div>
       </div>
     )
