@@ -39,8 +39,7 @@ export class MinerPaymentDataComponent extends Component {
       failureCount,
       lastTry,
       currentTimestamp,
-      minerImmatureBalance,
-      estimatedHourlyReturn
+      minerImmatureBalance
     } = this.props
     const { faderStyleId } = this.state
     const readableAmount = amount > 0 ? amount : 0
