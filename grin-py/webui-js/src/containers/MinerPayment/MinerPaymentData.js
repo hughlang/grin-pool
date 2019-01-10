@@ -60,10 +60,6 @@ export class MinerPaymentDataComponent extends Component {
               <td id={faderStyleId}>{nanoGrinToGrin(minerImmatureBalance)} GRIN</td>
             </tr>
             <tr>
-              <td>Current Estimated Hourly Return</td>
-              <td>{nanoGrinToGrin(estimatedHourlyReturn)} GRIN</td>
-            </tr>
-            <tr>
               <td>Payout Address</td>
               <td>{address || 'n/a'}</td>
             </tr>
